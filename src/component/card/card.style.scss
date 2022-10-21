@@ -1,0 +1,80 @@
+@import '../../style/variables.scss';
+.card{
+    background-image: url('../../assets/images/card.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.48);
+    background-blend-mode: overlay;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05);;
+    width: 90%;
+    margin:5px auto;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    @media screen and (min-width: 900px) {
+       width: 250px;
+
+     }
+     @media screen and (min-width: 1200px) {
+        width: 250px;
+
+     }
+    p{
+        font-size: 12px;
+    }
+    .card__delete{
+        align-self: flex-start;
+    }
+    .card__btn{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        height: 30px;
+        color: $primaryTextColor;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color: #fff;
+            color: black;
+        }
+
+    }
+    .card__picture{
+        height: 50px;
+    }
+    .card__description{
+        margin-bottom: 8px;
+    }
+    .card__box{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.36);
+        border-radius: 10px;
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          
+            div{
+                text-align: center;
+            }
+        }
+    }
+}

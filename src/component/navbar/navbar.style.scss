@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+.navbar{
+    position: sticky;
+    top:0;
+    background-color:$primaryColor;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    .navbar__div{
+        display: flex;
+        width: 90%;
+        color: #fff;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        //height: 60px;
+        .nabar__header{
+            margin: 0;
+        }
+        .navbar__btn{
+            height: 30px;
+        }
+    }
+}

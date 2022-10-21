@@ -1,0 +1,11 @@
+@import './style/variables.scss';
+body{
+    margin: 0;
+    padding: 0;
+    background-color:$primaryColor;
+    color: $primaryTextColor; 
+}
+*{
+    margin: 0;
+    padding: 0;
+}
