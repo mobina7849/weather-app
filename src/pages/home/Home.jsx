@@ -8,11 +8,17 @@ import HeaderForm from '../../component/header/HeaderForm';
 const Home = () => {
     return ( 
         <>
+        <Container>
           <Navbar/>
-          <Header><HeaderForm/></Header>
-          <Container>
+        </Container>
+          <Header>
+             <Container>
+                <HeaderForm/>
+              </Container>
+          </Header>
+        <Container>
             <CardList/>
-          </Container>
+        </Container>
       
 
         </>

@@ -1,16 +1,43 @@
+@import '../../style/variables.scss';
 .header{
-    /* width: 80%; */
+     width: 100%;
     /* margin: 0 auto; */
-    height: 300px;
+    height: 250px;
     background-image: url('../../assets/images/banner3.jpg');
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.64);
     background-blend-mode: overlay;
     background-position:center;
+    padding-top: 3rem;
     .header__section{
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 200px;
+        //padding-top: 10px;
+        .header__select{
+            padding: 10px;
+            border-radius: 5px;
+            background-color:rgba(255, 255, 255, 0.36) ;
+            
+
+        }
+        .form__btn{
+            background-color: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: $primaryTextColor;
+            transition: all 0.3s ease-in-out;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px;
+            cursor: pointer;
+            &:hover{
+                background-color: #fff;
+                color: black;
+            }
+        }
+
     }
     .wrapper{
         --imagesize:300px;

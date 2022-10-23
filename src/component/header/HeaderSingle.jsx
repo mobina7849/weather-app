@@ -6,6 +6,8 @@ const HeaderSingle = ({future}) => {
     return ( 
         <div className='headerSingle'>
             <h1>{future.name}</h1>
+            <h3>Weather for the next 7 days</h3>
+
         </div>
      );
 }
