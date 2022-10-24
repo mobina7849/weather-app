@@ -36,17 +36,17 @@ export const options=[
     },
     {
         id:7,
-        pName:"",
+        pName:"البرز",
         eName:"Alborz	"
     },
     {
         id:8,
-        pName:" ",
+        pName:" سمنان",
         eName:"Semnan	"
     },
     {
         id:9,
-        pName:"",
+        pName:"زنجان",
         eName:"Zanjan"
     },
     {
@@ -61,47 +61,47 @@ export const options=[
     },
     {
         id:12,
-        pName:"",
+        pName:"لرستان",
         eName:"Lorestan	"
     },
     {
         id:13,
-        pName:"",
+        pName:"قزوین",
         eName:"Qazvin	"
     },
     {
         id:14,
-        pName:"",
+        pName:"کردستان",
         eName:"Kurdistan"
     },
     {
         id:15,
-        pName:"",
-        eName:"Zanjan"
+        pName:"فارس",
+        eName:"Fars"
     },
     {
         id:16,
-        pName:"",
+        pName:"مرکزی",
         eName:"Markazi	"
     },
     {
         id:17,
-        pName:"",
+        pName:"اردبیل",
         eName:"Ardabil	"
     },
     {
         id:18,
-        pName:"",
+        pName:"خوزستان",
         eName:"Khuzestan"
     },
     {
         id:19,
-        pName:"",
+        pName:"کرمان",
         eName:"Kerman	"
     },
     {
         id:20,
-        pName:"",
+        pName:"همدان",
         eName:"Hamadan	"
     },
 ]

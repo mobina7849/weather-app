@@ -1,0 +1,23 @@
+.slide__setion{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    margin:10px auto;
+    gap: 10px;
+    flex-wrap: wrap;
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 2fr;
+
+     }
+     @media screen and (min-width: 900px) {
+        grid-template-columns: 3fr 4fr;
+
+     }
+     .hover{
+      transition: all 0.3s ease-in-out;
+        &:hover{
+            color: black;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+     }
+}

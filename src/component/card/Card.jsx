@@ -1,16 +1,27 @@
 import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeCity } from '../../redux/reducer/city.slice';
 import './card.style.scss';
 const Card = ({city}) => {
+    const [status,setStatus]=useState(false)
     const dispatch=useDispatch()
    const handleDelete=(name)=>{
     dispatch(removeCity(name))
    }
+   const handleStatus=()=>{
+    setStatus(!status)
+   }
     return ( 
         <div className='card'>
-            <p className='card__delete' onClick={()=>handleDelete(city)}><i className="fa-solid fa-xmark"></i></p>
+            <p className='card__items' onClick={handleStatus} ><i class="fa-solid fa-ellipsis-vertical"></i></p>
+           {status? <div className='items'  >
+           <div onClick={handleStatus} ><i className="fa-solid fa-xmark cursor"></i></div>
+           <Link className='item__link' to={`city/${city.name}`}> <div className="item">{"مشاهده بیشتر"}</div></Link>
+                <div className="item"  onClick={()=>handleDelete(city.name)}>{"پاک کردن"}</div>
+            </div>:null
+             }
             <h2>{city.name}</h2>
             <picture className='card__picture'>
             <img src={`http://openweathermap.org/img/w/${city.icon}.png`} alt="" />
@@ -18,19 +29,19 @@ const Card = ({city}) => {
             <p className='card__description'>{`${city.description}`}</p>
             <div className='card__box'>
                 <div className='box' >
-                    <div >{"temp "}</div>
+                    <div >{"دما"}</div>
                     <div>{`${city.temp}ºC`}</div>
                 </div>
                 <div className='box' >
-                    <div>{" cloudes"}</div>
+                    <div>{" ابری بودن"}</div>
                     <div>{city.clouds}</div>
                 </div>
                 <div className='box'>
-                    <div>{"wind speed"}</div>
+                    <div>{"سرعت باد"}</div>
                     <div>{city.wind}</div>
                 </div>
             </div>
-              <Link to={`city/${city.name}`}><button className='card__btn'>{" View 4 days from now "}</button></Link>
+              {/* <Link to={`city/${city.name}`}><button className='card__btn'>{" مشاهده 4 روز آینده "}</button></Link> */}
 
 
         </div>

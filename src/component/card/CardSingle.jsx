@@ -2,7 +2,7 @@ import React from 'react';
 import './card.style.scss';
 const CardSingle = ({future}) => {
     return ( 
-        <div className='card'>
+        <div className='card card__single '>
             {/* <p className='card__delete' onClick={()=>handleDelete(city)}><i class="fa-solid fa-xmark"></i></p> */}
             <h2>{future.name}</h2>
             <picture className='card__picture'>

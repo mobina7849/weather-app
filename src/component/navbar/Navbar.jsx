@@ -4,7 +4,7 @@ const Navbar = () => {
     return ( 
         <nav className='navbar'>
             <div className='navbar__div'>
-                <h1 className='nabar__header'> Weather App </h1>
+                <h1 className='nabar__header'> وضعیت آب و هوا </h1>
                 <button className='navbar__btn'><i className="fa-solid fa-cloud-sun fa-2xl" style={{color:"white",}}></i></button>
             </div>
 
