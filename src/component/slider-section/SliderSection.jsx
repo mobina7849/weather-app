@@ -18,7 +18,7 @@ const SliderSection = ({future,futureDays}) => {
         }
         return forcast;
     }
-    console.log(forcast)
+    //console.log(forcast)
     useEffect(()=>{
       handleHour(futureDays,forcast)
     },[futureDays,forcast])
