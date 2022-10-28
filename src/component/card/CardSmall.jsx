@@ -1,9 +1,7 @@
 import React from "react";
 const CardSmall = ({day}) => {
   return (
-    <div className="card ">
-      {/* <p className='card__delete' onClick={()=>handleDelete(city)}><i class="fa-solid fa-xmark"></i></p> */}
-      {/* <h2>{future.name}</h2> */}
+    <div className="card card__small">
       <div className="card__date">{`${day.date}`}</div>
       <picture className="card__picture">
         <img

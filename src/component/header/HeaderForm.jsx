@@ -1,9 +1,8 @@
 import React,{useState} from 'react';
-import{useDispatch,useSelector} from 'react-redux'
+import{useDispatch} from 'react-redux'
 import { addCity } from '../../redux/reducer/city.slice';
 import axios from 'axios';
 import {options} from '../../data/dataSelectbox'
-import { useEffect } from 'react';
 const HeaderForm = () => {
     const [value,setValue]=useState('')
     const dispatch=useDispatch()
@@ -21,7 +20,7 @@ const HeaderForm = () => {
 
 
         }).catch( (error) =>{
-            console.error(error);
+           alert('Network error! please turn on vpn or check your network')
         });
     }
  
@@ -33,14 +32,11 @@ const HeaderForm = () => {
         <form >
         <input type="submit" value={'+ اضافه کردن شهر'} onClick={handleAdd} className='form__btn'/>
            <select className='header__select' name="cities" id="cities" onChange={handleOption}>
-              {/* <optgroup label={'شهرها'}> */}
-                <option value='' disabled selected>{"انتخاب شهر"}</option>
+                <option  disabled selected={'selected'} >{"انتخاب شهر"}</option>
                  {options.map(option=>(
-                      <option value={option.eName}>{option.eName}</option>
+                      <option key={option.id} value={option.eName}>{option.pName}</option>
                  ))}
-               
 
-              {/* </optgroup> */}
            </select>
          </form>
 

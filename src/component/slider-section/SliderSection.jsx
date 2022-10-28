@@ -1,20 +1,14 @@
-import axios from 'axios';
 import React,{useState} from 'react';
 import { useEffect } from 'react';
 import CardSingle from '../card/CardSingle';
 import CardSmall from '../card/CardSmall';
 import '../card/card.style.scss'
 import './slider.style.scss'
-const SliderSection = ({future,futureDays,setFutureDays}) => {
-    const counter=[
-        0,1,2,3,4
-    ]
+const SliderSection = ({future,futureDays}) => {
+ 
    
-    const [forcast,setForcast]=useState([
+    const [forcast,setForcast]=useState([])
 
-
-
-    ])
     const handleHour=(futureDays,forcast)=>{
         //let content = [];
         for (let i = 0; i <5; i++) {
@@ -24,8 +18,8 @@ const SliderSection = ({future,futureDays,setFutureDays}) => {
         }
         return forcast;
     }
+    console.log(forcast)
     useEffect(()=>{
-      //  setForcast([...forcast,{counter.map(c=>)}])
       handleHour(futureDays,forcast)
     },[futureDays,forcast])
     const [currentIndex,setCurrentIndex]=useState(0)
@@ -54,27 +48,22 @@ const SliderSection = ({future,futureDays,setFutureDays}) => {
     };
     const goToPrev=()=>{
         const isFirstSlide=currentIndex===0;
-        const newIndex=isFirstSlide?counter.length-1 : currentIndex-1;
+        const newIndex=isFirstSlide?forcast.length-1 : currentIndex-1;
         setCurrentIndex(newIndex)
     }
     const goToNext=()=>{
-        const isLastSlide=currentIndex===counter.length-1;
+        const isLastSlide=currentIndex===forcast.length-1;
         const newIndex=isLastSlide?0: currentIndex+1;
         setCurrentIndex(newIndex);
     }
-    //console.log(currentIndex)
-    //console.log(currentIndex)
 
-   // console.log(futureDays)
     return ( 
         <div className='slide__setion'>
           <div><CardSingle future={future} className="card-s"/></div>
           <div  style={{position:"relative"}}>
             <div style={left} className="hover" onClick={goToPrev}>{">"}</div>
-           {forcast.filter((item,index)=>(index===currentIndex)).map((day)=>(
-                      <CardSmall day={day} />
-                     //<div style={{textAlign:"center"}}>{day.temp }</div>
-                     //<div>hii</div>
+           {forcast.filter((item,index)=>(index===currentIndex)).map((day,index)=>(
+                      <CardSmall day={day} key={index}/>
           ))}
           <div style={right}  className="hover" onClick={goToNext}>{"<"}</div>
           </div>

@@ -1,9 +1,8 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './header.style.scss';
 
 const Header = (props) => {
 
-    //console.log(cities)
     return ( 
     <header className='header'>
         {props.children}

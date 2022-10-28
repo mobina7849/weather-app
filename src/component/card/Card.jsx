@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeCity } from '../../redux/reducer/city.slice';
 import './card.style.scss';
+import '../header/header.style.scss'
 const Card = ({city}) => {
     const [status,setStatus]=useState(false)
     const dispatch=useDispatch()
@@ -15,7 +16,7 @@ const Card = ({city}) => {
    }
     return ( 
         <div className='card'>
-            <p className='card__items' onClick={handleStatus} ><i class="fa-solid fa-ellipsis-vertical"></i></p>
+            <div className='card__items card__btn' onClick={handleStatus} ><i className="fa-solid fa-ellipsis-vertical"></i><div  style={{marginRight:'2px',fontSize:'12px'}}>{"جزیيات بیشتر"}</div></div>
            {status? <div className='items'  >
            <div onClick={handleStatus} ><i className="fa-solid fa-xmark cursor"></i></div>
            <Link className='item__link' to={`city/${city.name}`}> <div className="item">{"مشاهده بیشتر"}</div></Link>
@@ -41,8 +42,6 @@ const Card = ({city}) => {
                     <div>{city.wind}</div>
                 </div>
             </div>
-              {/* <Link to={`city/${city.name}`}><button className='card__btn'>{" مشاهده 4 روز آینده "}</button></Link> */}
-
 
         </div>
      );

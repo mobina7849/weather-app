@@ -11,7 +11,6 @@ export const CitySlice=createSlice({
             state.push(action.payload)
     },
         removeCity:(state,action)=>{
-            //state=[...state].filter(item=>item.id!==action.payload.id)
             const index=state.findIndex(item=>item.name===action.payload)
             state.splice(index,1)
     },
@@ -19,5 +18,5 @@ export const CitySlice=createSlice({
   }
 });
 //done done actions ro export mikonim
-  export const{addCity,removeCity}=CitySlice.actions
+  export const {addCity,removeCity} = CitySlice.actions
   export default CitySlice.reducer

@@ -29,6 +29,9 @@
         width: 300px;
         //height: 300px;
      }
+     &.card__small{
+        width: 70%;
+     }
      }
      @media screen and (min-width: 1200px) {
         
@@ -72,17 +75,21 @@
         }
     }
     .card__btn{
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        //width: 100%;
+        //position: absolute;
+        //bottom: 0;
+        //right: 0;
+        //border-bottom-left-radius: 10px;
+         //border-bottom-right-radius: 10px;
+         border-radius: 10px;
+         padding: 3px;
         background-color: rgba(255, 255, 255, 0.2);
         border: none;
         height: 30px;
         color: $primaryTextColor;
         transition: all 0.3s ease-in-out;
+        display:flex;
+         align-items: center;
         &:hover{
             background-color: #fff;
             color: black;

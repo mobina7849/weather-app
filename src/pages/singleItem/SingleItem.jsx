@@ -6,26 +6,22 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import HeaderSingle from "../../component/header/HeaderSingle";
-import CardSingle from "../../component/card/CardSingle";
 import Container from "../../component/container/Container";
 import SliderSection from "../../component/slider-section/SliderSection";
 import axios from "axios";
-import api from "../../api/api";
 import { useNavigate } from "react-router-dom";
 const SingleItem = () => {
   const [future, setFuture] = useState("");
   const [futureDays, setFutureDays] = useState([]);
   const cities = useSelector((state) => state.cities);
   const { cityID } = useParams();
-  const c=[0,1,2,3,4]
   const navigate=useNavigate()
   const [pending,setPending]=useState(true)
   useEffect(() => {
    
     setFuture(cities.filter((city) => city.name === cityID)[0]);
-    //console.log(cities)
    
-  }, []);
+  }, [cities,cityID]);
   const url=`https://api.openweathermap.org/data/2.5/forecast?q=${cityID}&lang=fa&units=metric&appid=6793aa18d1e5e9cb69cb53d946d089c1`
   const handleGetData=async()=>{
    const data = await axios(url).then(res=>res.data)
@@ -46,7 +42,6 @@ const SingleItem = () => {
     handleGetData()
 },[])
   
-  console.log(futureDays);
  const handleBack=()=>{
   navigate('/')
  }

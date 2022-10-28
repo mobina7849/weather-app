@@ -6,8 +6,8 @@ const CardList = () => {
     const cities=useSelector(state=>state.cities)
     return ( 
         <div className='card-list'>
-        {cities.map(city=>(
-            <Card city={city}/>
+        {cities.map((city,index)=>(
+            <Card key={index} city={city}/>
         ))}
         </div>
      );
